@@ -1,0 +1,31 @@
+
+.contact-container {
+    margin: 50px auto;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ContactezNous {
+    color: #000;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form .btn {
+    background-color: #b37f52;
+    color: white;
+    width: 368px
+}

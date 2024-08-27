@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$font-family-montserrat: Montserrat, sans-serif;
+
+$weight-normal: 400;
+$weight-bold: 700;
+
+p,h1,h2,h3,h4,h5,h6 {
+  overflow-wrap: break-word;
+}
+
+
+@mixin montserrat-styles {
+  font-family: $font-family-montserrat;
+  color: black;
+}

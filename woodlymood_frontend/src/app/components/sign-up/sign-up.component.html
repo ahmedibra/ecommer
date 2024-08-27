@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="text-center my-5">
+    <h1 class="creerMonCompte">Créer mon compte</h1>
+  </div>
+  <form class="form" #f="ngForm"   name="form" (ngSubmit)="f.form.valid && register()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nom">Nom *</label>
+        <input type="text" class="form-control" [(ngModel)]="fo.nom"  id="nom" name="nom"  required
+  
+        #nom="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && nom.errors }">
+        <div *ngIf="nom.errors && f.submitted" >
+          <div class="invalid-feedback">
+            <div *ngIf="nom.errors['required']" >
+            <div>Nom est obligatoire</div>
+           </div>
+
+           
+      </div>
+    </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="prenom">Prénom *</label>
+        <input type="text" class="form-control" [(ngModel)]="fo.prenom" id="prenom" name="prenom" required
+  
+        #prenom="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && prenom.errors }">
+        <div *ngIf="prenom.errors && f.submitted">
+          <div class="invalid-feedback">
+            <div *ngIf="prenom.errors['required']">
+            <div>Prénom est obligatoire</div>
+            </div>
+
+           
+      </div>
+      </div>
+      </div>
+   
+    <div class="form-group col-md-6">
+      <label for="nomUtilisateur">Nom utilisateur *</label>
+      <input type="text" class="form-control" id="nomUtilisateur" [(ngModel)]="fo.name"  name="name" required
+  
+      #name="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && name.errors }">
+      <div *ngIf="name.errors && f.submitted">
+        <div class="invalid-feedback">
+          <div *ngIf="name.errors['required']">
+          <div>Nom utilisateur est obligatoire</div>
+          </div>
+
+         
+    </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="motDePasse">Mot de passe *</label>
+      <input type="password" class="form-control" id="motDePasse" [(ngModel)]="fo.password"  name="password" required
+      minlength="6"
+      #password="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+      <div *ngIf="password.errors && f.submitted">
+        <div class="invalid-feedback">
+          <div *ngIf="password.errors['required']">
+          <div>mot de passe est obligatoire</div> {{'}'}}
+          <div *ngIf="password.errors['minlength']">
+            <div>minimum 6 caractére</div>
+          </div>
+
+         
+    </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="numeroDeTelephone">Numéro de téléphone *</label>
+      <input type="text" class="form-control" id="numeroDeTelephone" [(ngModel)]="fo.numtel"  name="numtel" required
+  
+      #numtel="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && numtel.errors }">
+      <div *ngIf="numtel.errors && f.submitted">
+        <div class="invalid-feedback">
+          <div *ngIf="numtel.errors['required']">
+          <div>Telephone est obligatoire</div>
+          </div>
+
+         
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="adresseEmail">Adresse email *</label>
+      <input type="email" class="form-control" id="adresseEmail" [(ngModel)]="fo.email" name="email" required
+      email
+      #email="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+    />
+    <div *ngIf="email.errors && f.submitted">
+    <div class="invalid-feedback">
+      <div *ngIf="email.errors['required']">
+      <div>Email est oblogatoire</div>
+      </div>
+      <div *ngIf="email.errors['email']">
+      <div>Email incorrect</div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <br><br><br><br>
+    <button type="submit" class="btn btn-block creerMonCompte2">Créer mon compte</button>
+    </div>
+  </form>
+</div>

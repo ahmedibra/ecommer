@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-g">
+  <a class="navbar-brand" href="#">Gestion des produits</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/category" routerLinkActive="active">Nos categorie</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/category/create" routerLinkActive="active">Ajouter un categorie</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <div class="card card-body">
+
+      <form (submit)="edit ? updateCategory() : submitCategory()">
+
+        <div class="form-group">
+          <input type="text" name="name" [(ngModel)]="category.name" class="form-control" placeholder="Categorie" autofocus>
+        </div><br>
+        <div class="form-group">
+          <input type="text" name="title" [(ngModel)]="category.title" class="form-control" placeholder="titre" autofocus>
+          </div><br>
+          <div class="form-group">
+          <input type="file" (change)="onFileSelected($event)" name="file" required>
+        </div><br>
+
+       
+        <button type="submit" class="btn btn-primary btn-block">
+          Enregistrer
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

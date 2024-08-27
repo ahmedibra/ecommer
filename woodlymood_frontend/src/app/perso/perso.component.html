@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="image-upload-wrapper">
+                <label for="imageUpload" class="image-upload-label">
+                    <img id="uploadedImage" src="" alt="Upload Icon" class="img-fluid">
+                </label>
+               
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>C'est quoi personnaliser ?</h4>
+            <p>Woodly Mood vous offre la possibilité de faire personnaliser votre commande juste télécharger votre sketch ou image de référence. Vous pouvez ajouter au dessous une description de votre commande si vous avez d'autres spécifications et l'envoyer par la suite.</p>
+            <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+                <div class="form-group">
+                <label for="email">Email:</label>
+                <input id="email" formControlName="email" type="email" required>
+            </div>
+                <div class="form-group">
+                    <label for="titre">Titre *</label>
+                    <input type="text" class="form-control" id="titre" formControlName="titre" placeholder="Insérez un titre pour votre produit" required>
+                </div>
+                <div class="form-group">
+                <label for="image">Image:</label>
+                <input id="file" type="file" (change)="onFileChange($event)" name="file"/>
+            </div>
+                <div class="form-group">
+                    <label for="bois">Bois *</label>
+                    <select class="form-control" formControlName="bois" id="bois" required>
+                        <option value="bois1">Bois 1</option>
+                        <option value="bois2">Bois 2</option>
+                        <option value="bois3">Bois 3</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="largeur">Largeur</label>
+                        <input type="number" class="form-control" formControlName="largeur" id="largeur" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="longueur">Longueur</label>
+                        <input type="number" class="form-control" formControlName="longueur" id="longueur" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="hauteur">Hauteur</label>
+                        <input type="number" class="form-control" formControlName="hauteur" id="hauteur" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description :</label>
+                    <textarea class="form-control" id="description" rows="4" placeholder="Ajouter ici votre description" formControlName="description" required></textarea>
+                </div>
+                <button type="submit" (click)=onSubmit() class="btn btn-primary">Envoyer</button>
+<br><br>
+                <div style="color:green; font-size: large; margin-top: 25px; margin-bottom: 25px;"*ngIf="responseMessage">{{ responseMessage }}</div>
+            </form>
+        </div>
+    </div>
+</div>

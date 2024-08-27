@@ -1,0 +1,26 @@
+<div class="sign-in-container container col-md-4">
+  <section class="d-flex justify-content-center">
+    <span class="se-connecter">Se Connecter</span>
+  </section>
+  <form #f="ngForm" (ngSubmit)="logIn()">
+    <div class="form-group">
+      <label for="username" class="nom-utilisateur">Nom utilisateur *</label>
+      <input id="username" type="text" class="form-control" [(ngModel)]="fo.email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="password" class="mot-de-passe">Mot de passe *</label>
+      <input id="password" type="password" class="form-control" [(ngModel)]="fo.password" name="password">
+    </div>
+    <span class="mot-de-passe-oublier">Mot de Passe oublié ?</span>
+    <button type="submit" class="btn bouton-se-connecter">
+      Se Connecter
+    </button>
+    <button type="button" class="btn bouton-se-connecter-avec-google">
+      <div class="google-icone"></div>
+      Se connecter avec Google
+    </button>
+    <div class="vous-n-avez-pas-connecter">
+      <span>Vous n'avez pas de compte ? <a href="javascript:void(0);" (click)="goToSignUp()" class="inscrivez-vous-gratuitement">Inscrivez-vous gratuitement</a></span>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <h1></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- End Hero Section -->
+
+<div class="untree_co-section">
+    <div class="container">
+      <br><br>
+      <div class="row">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <h2 class="h3 mb-3 text-black">Information utilisateur</h2>
+          <div class="p-3 p-lg-5 border bg-white">
+            <div class="form-group">
+              <label for="c_country" class="text-black">Pays <span class="text-danger">*</span></label>
+              <input type="text" value="Tunisie">
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="c_fname" class="text-black">Prénom <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="user.prenom" id="prenom" name="prenom">
+              </div>
+              <div class="col-md-6">
+                <label for="c_lname" class="text-black">Nom <span class="text-danger">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="user.nom"id="nom" name="nom">
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="c_address" class="text-black">Addresse <span class="text-danger">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="user.addresse" id="addresse" name="addresse" placeholder="Adresse" required>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="c_state_country" class="text-black">Ville <span class="text-danger">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="user.ville" id="ville" name="ville" required>
+              </div>
+              <div class="col-md-6">
+                <label for="c_postal_zip" class="text-black">Code postal <span class="text-danger">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="user.codepostale" id="codepostale" name="codepostale" required>
+              </div>
+            </div>
+
+            <div class="form-group row mb-5">
+              <div class="col-md-6">
+                <label for="c_email_address" class="text-black">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" [(ngModel)]="user.email" id="email" name="email">
+              </div>
+              <div class="col-md-6">
+                <label for="c_phone" class="text-black">Télephone <span class="text-danger">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="user.numtel"id="numtel" name="numtel" placeholder="télephone">
+              </div>
+            </div>
+
+                               
+
+
+          </div>
+        </div>
+        <div class="col-md-6">
+
+          
+
+          <div class="row mb-5">
+            <div class="col-md-12">
+              <h2 class="h3 mb-3 text-black">Votre Commonde</h2>
+              <div class="p-3 p-lg-5 border bg-white">
+                <table class="table site-block-order-table mb-5">
+                  <thead>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of cart.items">
+                      <td>{{ item.productId.name }} </td>
+                      <td>{{ item.quantity }}</td>
+                      <td *ngIf="item.productId.promotion>0 ; else elseBlock" >{{ item.productId.promotion* item.quantity  }} Dinar</td>
+                        <ng-template  #elseBlock><td>{{ item.productId.price* item.quantity }} Dinar</td></ng-template>
+                    </tr>
+                  
+                   
+                  </tbody>
+                </table>
+                    <br>
+                    <table class="table site-block-order-table mb-5">
+                    <tr>
+                        <td class="text-black font-weight-bold"><strong>Expédition</strong></td>
+                        <td class="text-black">8 Dinar</td></tr>
+                        <tr><td class="text-black font-weight-bold"><strong>Totale commonde</strong></td>
+                        <td class="text-black">{{total+8 }} Dinar</td>
+                      </tr>
+                
+                </table>
+
+
+                <div class="border p-3 mb-3">
+                    <input type="radio" checked id="paye" name="paye" [(ngModel)]="livraison" value="cheque" style="margin-right: 10px;">
+                    <label for="paye">payé par chéque à la livraison</label><br>
+                </div>
+
+                <div class="border p-3 mb-3">
+                    <input type="radio" id="paye" name="paye" [(ngModel)]="livraison" value="espece" style="margin-right: 10px;"  >
+                    <label for="paye">payé par espéce à la livraison</label><br>
+                </div>
+
+                <div class="form-group text-center" style="margin-top: 50px;">
+                  <button class="btn btn-primary text-center" (click)="create()">Confirmer la commonde</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>

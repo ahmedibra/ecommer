@@ -1,0 +1,19 @@
+/* app.component.scss */
+app-header {
+  margin-bottom: 30px; // Adjust as necessary for spacing below the header
+}
+
+app-footer {
+  margin-top: 30px; // Adjust as necessary for spacing above the footer
+}
+
+/* Responsive spacing adjustments in app.component.scss */
+@media (max-width: 768px) {
+  app-header {
+    margin-bottom: 15px;
+  }
+
+  app-footer {
+    margin-top: 15px;
+  }
+}

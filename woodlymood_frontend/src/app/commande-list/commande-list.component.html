@@ -1,0 +1,73 @@
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Dashbord</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product" routerLinkActive="active">Nos produits</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product/create" routerLinkActive="active">Ajouter un produit</a>
+      </li>  <li class="nav-item active">
+        <a class="nav-link" routerLink="/category" routerLinkActive="active">Nos categories</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/category/create" routerLinkActive="active">Ajouter un categorie</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/commande-list" routerLinkActive="active">Liste des commandes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div *ngFor="let ordre of ordres | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" class="card card-body mb-2">
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li><b>Utilisateur</b>: {{ordre.nom}}  {{ordre.prenom}}
+          </li>
+       
+            <li><b>Adresse :</b> {{ordre.addresse}}  {{ordre.ville}}  {{ordre.codepostale}}
+              </li>
+                <li><b>Email :</b> {{ordre.email}}
+                  </li>
+                  <li><b>Télephone :</b> {{ordre.numtel}}
+                </li>
+                <li>
+        <p><b>Liste des produits: </b></p>  
+          <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                  <th scope="col">Quantité</th>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Prix</th>
+                  <th scope="col">Promotion</th>
+                  <th scope="col">Image</th>
+                </tr>
+              </thead>
+            <tr *ngFor="let item of ordre.products">
+                <td>{{item.quantity}}</td>
+                <td>{{item.productId.name}}</td>
+                <td>{{item.productId.price}}</td>
+                <td>{{item.productId.promotion}}</td>
+                <td> <img src='{{"http://localhost:3000/uploads/"+item.productId.imageURL}}'  height="100" width="100"></td>
+         </tr>
+          </table>
+                </li>
+        <li>
+          <b>Total:</b> {{ordre.total}}
+        </li>
+        <li>
+          <b>Livraison:</b> {{ordre.livraison}}
+        </li>
+        <li>
+        <b>Status:</b>  {{ordre.status}}
+        </li>
+      </ul>
+    </div>
+   
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Dashbord</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/category" routerLinkActive="active">Nos categories</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/category/create" routerLinkActive="active">Ajouter un categorie</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product" routerLinkActive="active">Nos produits</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product/create" routerLinkActive="active">Ajouter un produit</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/commande-list" routerLinkActive="active">Liste des commandes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div *ngFor="let category of categories" class="card card-body mb-2">
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li>
+          id: {{category._id}}
+        </li>
+        <li>
+          Nom: {{category.name}}
+        </li>
+        <li>
+          titre: {{category.title}}
+        </li>
+        <li>
+          <img src='{{"http://localhost:3000/uploads/"+category.image}}' class="card-img">
+        </li>
+      </ul>
+      <button (click)="deleteCategory(category._id)" class="btn btn-danger">
+        Supprimer
+      </button>
+      <button [routerLink]="['/category/edit', category._id]" class="btn btn-secondary">
+        Modifier
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>

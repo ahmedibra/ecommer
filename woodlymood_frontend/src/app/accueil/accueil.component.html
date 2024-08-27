@@ -1,0 +1,350 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<div class="hero-area hero-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 offset-lg-2 text-center">
+        <div class="hero-text">
+          <div class="hero-text-tablecell">
+            <h2 style="color: white ;font-weight: extrabold ; font-size: 48px">Des promotions jusqu’au 50%</h2>
+            <div class="hero-btns">
+              <a href="contact.html" class="bordered-btn">J’en profite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end hero area -->
+
+
+
+<!-- features list section -->
+<div class="list-section pt-80 pb-80">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <a [routerLink]="['/page/66bbbf50c7992b860a472ea7']"><img src="assets/images/salon_2.png" style="width: 100px;height: 100px;"></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <a [routerLink]="['/page/66bbbf5ec7992b860a472eaa']"><img src="assets/images/chambre.png" style="width: 100px;height: 100px;"></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <a [routerLink]="['/page/66bd256e816e98fea884c965']"> <img src="assets/images/table_de_cuisine.png" style="width: 100px;height: 100px;"></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <a [routerLink]="['/page/66bd26ce816e98fea884c9ce']"><img src="assets/images/salle_de_bains_11.png" style="width: 100px;height: 100px;"></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <a [routerLink]="['/page/66c107d7108c6dbdd776fac3']"><img src="assets/images/table.png" style="width: 100px;height: 100px;"></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <a [routerLink]="['/page/66c10805108c6dbdd776facb']"><img src="assets/images/bureau.png" style="width: 100px;height: 100px;"></a>
+        </div>
+      </div>
+      
+
+
+    </div>
+
+  </div>
+</div>
+<!-- end features list section -->
+
+
+
+
+<!-- product section -->
+<div class="product-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="section-title">	
+          <h2 style="color:#3E6259">Nos Produits</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div  *ngFor="let product of filteredProducts| paginate: { itemsPerPage: itemsPerPage, currentPage: p}" class="col-lg-4 col-md-6">
+        <div class="single-latest-news">
+          <a [routerLink]="['/product/detail', product._id]"><div class="latest-news-bg"><img src='{{"http://localhost:3000/uploads/"+product.imageURL}}' style="box-shadow: 0px 4px 4px 0px #00000040; border-radius: 25px;" height="342px" width="350px"></div></a>
+          <div class="news-text-box text-center">
+            <h3><a [routerLink]="['/product/detail', product._id]">{{product.name}}</a></h3>
+            
+            <div  *ngIf="product.promotion>0 ; else elseBlock"class="blog-meta">Prix : <s>{{product.price}} Dinar</s><b style="margin-left: 10px;">{{product.promotion}} Dinar</b></div>
+          
+            <ng-template class="blog-meta" #elseBlock>Prix : {{product.price}} Dinar</ng-template>
+            <div *ngIf="product.quantity > 0; else elseBlock1"> <span class="status-indicator" style="margin-right: 10px;"></span>En stock</div>
+            <ng-template #elseBlock1> <br><span class="status-indicator2" style="margin-right: 10px;"></span>Repture de stock</ng-template>
+          </div>
+        </div>
+       
+      </div>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+     
+ 
+     
+
+    </div>
+
+
+
+
+  </div>
+</div>
+<!-- end latest news -->
+
+
+
+<div class="container- mt-5">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <div class="product-image mb-7">
+      <!--<img src="assets/images/cuis.png" style="width: 620px;height: 630px;" alt="" class="img-fluid">-->
+      </div>
+    </div>
+    <div class="col-md-6">
+    <div class="product-card">
+      <div class="product-details">
+       
+        <h4>Exclusivement pour vous !</h4>
+        
+        <p>Offrez-vous des pieces uniques qui ne sont disponibles qu’ici. </p>
+        <a [routerLink]="['/perso']"><button class="btn_rt"><b>Personnaliser</b></button></a>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div></div>
+<!-- end product section -->
+
+
+<div class="product-section background-page mt-150 mb-150 ">
+  <div style="height: 250px; width:300px;position: absolute;margin-top: 240px;;margin-left: 50px;">
+    <div class="single-latest-news">
+      <div class="news-text-box text-center">
+        <p class="blog-meta">Explorez nos collections 
+          soigneusement choisies 
+          et trouvez l'inspiration 
+          pour créer l'espace de 
+          vos rêves.</p>
+          <p><button class="btn_rt"> En savoir plus </button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- product section -->
+<div class="product-section mt-150 mb-150">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 text-center">
+      <div class="section-title">	
+        <h2 style="color:#3E6259">Nos coups de coeur</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <div class="single-latest-news">
+        <a href="single-news.html"><div class="latest-news-bg1 news-bg1"><div class="title-btn">Buffet</div></div></a>
+        
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <div class="single-latest-news">
+        <a href="single-news.html"><div class="latest-news-bg1 news-bg2"><div class="title-btn">Table</div></div></a>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+      <div class="single-latest-news">
+        <a href="single-news.html"><div class="latest-news-bg1 news-bg3"><div class="title-btn">Vasque</div></div></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- end latest news -->
+<!-- product section -->
+<div class="product-section mt-150 mb-150">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 text-center">
+      <div class="section-title">	
+        <h2 style="color:#3E6259">Nos Blogs</h2>
+        <p>Trouvez une brillante idée qui correspond à vos goûts
+          avec notre grande sélection.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <div class="single-latest-news">
+        <a href="single-news.html"><div class="latest-news-bg1 news-bg-1" style="height: 294px;"></div></a>
+        <div class="news-text-box text-center">
+          <h5><a href="single-news.html">LES COULEUR ASSOCIER AVEC LE BOIS</a></h5>
+          <h6> une grande variété de teintes se marie avec le mobilier
+            en bois ! Pour faire votre choix, il est important de prendre
+            en compte votre décoration intérieure et ...</h6>
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <div class="single-latest-news">
+        <a href="single-news.html"><div class="latest-news-bg1 news-bg-2" style="height: 294px;"></div></a>
+        <div class="news-text-box text-center">
+          <h5><a href="single-news.html">5 ERREURS À EVITER DANS VOTRE CUISINE
+          </a></h5>
+          <h6>Vous avez envie de renouveau mais vous ne savez pas
+            comment vous y prendre pour créer une cuisine
+            fonctionnelle et tendance ? Vous allez être ...</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+      <div class="single-latest-news">
+        <a href="single-news.html"><div class="latest-news-bg1 news-bg-3" style="height: 294px;"></div></a>
+        <div class="news-text-box text-center">
+          <h5><a href="single-news.html">LES 10 INSPIRATIONS À SUIVRE CETTE ANNÉE !</a></h5>
+          <h6>Voulez-vous savoir ce que nous réserve 2024 côté déco ?
+            Entre come-back des couleurs feel good et nouvelles modes,
+            découvrez en avant-première les 10 tendances qui ...</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- end latest news -->
+
+<!-- product section -->
+<div class="product-section mt-150 mb-150">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 text-center">
+      <div class="section-title">	
+        <h2 style="color:#3E6259">Avis Client</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <div class="single-latest-news">
+        <div class="news-text-box text-center">
+          <p><img src="assets/images/mariem.png" class=""></p>
+          
+          <h5>J'ai récemment commandé une table
+            à manger et des chaises sur ce site et
+            je suis très satisfaite de mon achat !
+            La qualité des meubles est excellente
+            et le processus de commande était
+            simple et fluide.</h5>
+            <p><img src="assets/images/etoile3-icon.svg"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <div class="single-latest-news">
+        <div class="news-text-box text-center">
+          <p><img src="assets/images/hatem.png" alt= "Hatem" class=""></p>
+          <h5>Je suis un client fidèle de ce site depuis
+            plusieurs années et je n'ai jamais été
+            déçu ! J'ai acheté divers meubles pour
+            mon appartement et chaque fois, la
+            qualité et le service ont été impeccables.</h5>
+            <p><img src="assets/images/etoile1-icon.svg"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+      <div class="single-latest-news">
+        <div class="news-text-box text-center">
+          <p><img src="assets/images/fatma.png" class=""></p>
+          
+          <h5>Je suis ravie de mon expérience avec ce
+            site ! J'ai commandé une armoire et une
+            commode pour ma chambre et je suis
+            impressionnée par la qualité du bois et
+            de la fabrication. La livraison a été rapide
+            et les meubles étaient protégés.</h5>
+            <p><img src="assets/images/etoile2-icon.svg"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- end latest news -->
+
+
+<!-- product section -->
+<div class="product-section mt-150 mb-150">
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+      <div class="single-latest-news" style="width: 265px;height: 202px;">
+        <div class="news-text-box text-center">
+          <p><img src="assets/images/garantie_1.png" class="pos"></p>
+          <h5>Garantie de retour</h5>
+          <h6>Produits de qualité</h6>
+            
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="single-latest-news" style="width: 265px;height: 202px;">
+        <div class="news-text-box text-center">
+          <p><img src="assets/images/delivery_truck_2769339.png" class="pos"></p>
+          <h5>Livraison et Expedition</h5>
+          <h6>Livraison fiable et rapide</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 offset-md-3 offset-lg-0">
+      <div class="single-latest-news" style="width: 265px;height: 202px;">
+        <div class="news-text-box text-center">
+          <p><img src="assets/images/1611173 1.png" class="pos"></p>
+          <h5>Livraison et Expedition</h5>
+          <h6>Livraison fiable et rapide</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 offset-md-3 offset-lg-0">
+      <div class="single-latest-news" style="width: 265px;height: 202px;">
+        <div class="news-text-box text-center">
+          <p><img src="assets/images/satisfaction.png" class="pos"></p>
+          <h5>Satisfaction Garantie</h5>
+          <h6>Services de qualité</h6>
+            
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+<!-- end latest news -->
+
+
+
+

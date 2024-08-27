@@ -1,0 +1,66 @@
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Dashbord</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product" routerLinkActive="active">Nos produits</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product/create" routerLinkActive="active">Ajouter un produit</a>
+      </li>  <li class="nav-item active">
+        <a class="nav-link" routerLink="/category" routerLinkActive="active">Nos categories</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/category/create" routerLinkActive="active">Ajouter un categorie</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/commande-list" routerLinkActive="active">Liste des commandes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div *ngFor="let product of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" class="card card-body mb-2">
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li>
+          id: {{product._id}}
+        </li>
+        <li>
+          Nom: {{product.name}}
+        </li>
+        <li>
+          Description: {{product.description}}
+        </li>
+        <li>
+          Prix: {{product.price}}
+        </li>
+        <li>
+          Prix de promotion: {{product.promotion}}
+        </li>
+        <li>
+          Quantité: {{product.quantity}}
+        </li>
+        <li>
+          categorie: {{product.category.name}}         
+          
+        </li>
+      </ul>
+      <button (click)="deleteProduct(product._id)" class="btn btn-danger">
+        Supprimer
+      </button>
+      <button [routerLink]="['/product/edit', product._id]" class="btn btn-secondary">
+        Modifier
+      </button>
+    </div>
+    <div class="col-md-4">
+      <img src='{{"http://localhost:3000/uploads/"+product.imageURL}}'  height="200" width="200">
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

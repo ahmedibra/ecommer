@@ -1,0 +1,210 @@
+/*:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: inset 0px 1px 0px #bf8c604d;
+  padding: 20px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 200px;
+  height: 56px;
+  position: absolute;
+  left: 100px;
+ background-image: url('/assets/logowood.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.list {
+  margin: 20px;
+  width: 33%; // Give each list a third of the width in large screens
+}
+
+.list li {
+  margin: 5px 0;
+}
+
+.liens,
+.aideetservices,
+.contactezNous {
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+
+.list li a,
+.social-icons li .icon {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.social-icons {
+  
+  align-items: center;
+  
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.instagram {
+  background-image: url('/assets/instagram.png');
+  position: absolute;
+  left: 1204px;
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.facebook {
+  background-image: url('/assets/facebook.png');
+  position: absolute;
+  left: 1247px;
+  
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.linkedin {
+  background-image: url('/assets/linkedin.png');
+  position: absolute;
+  left: 1290px;
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pinterest {
+  background-image: url('/assets/pinterest.png');
+  position: absolute;
+  left: 1333px;
+  width: 28px;
+  height: 28px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list {
+    width: 100%; // Each list takes full width on smaller screens
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    width: 100%; // Ensures logo container is full-width
+  }
+
+  .logo {
+    width: 150px; // Slightly smaller logo on small devices
+    height: auto; // Maintain aspect ratio
+  }
+
+  .list li a,
+  .social-icons li .icon {
+    font-size: 14px; // Smaller font size on small devices
+    top: 1553px;
+  }
+}
+*/
+
+
+
+
+.footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #000;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .logo {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+.h5{
+
+  font-weight: bold;
+  font-size:20px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+
+
+
+.footer .col-md-4 {
+  text-align: center;
+}
+
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer li {
+  margin: 5px 0;
+}
+
+
+.footer .social-icons a {
+  margin: 0 10px;
+}
+

@@ -1,0 +1,23 @@
+<div class="header-container">
+  <div class="promo-message">-10% pour votre premier achat</div>
+  <!--<div class="hours-available">Disponible de Lundi à Vendredi : 9h à 17h</div>-->
+  
+  <ul class="header-links">
+    <li><a href="javascript:void(0);" (click)="goToContact()" class="contact-link">contactez-nous</a></li>
+   <!--<li><a href="" class="order-tracking-link">Suivi commande</a></li>-->
+    <div *ngIf="isLoggedIn;then Avail else NotAvail"></div>
+    <ng-template #Avail> <li><a href="javascript:void(0);" (click)="sedeconnecter()" class="signup-link">Se déConnecter </a></li></ng-template>
+      <ng-template #NotAvail><li><a href="javascript:void(0);" (click)="goToSignIn()" class="signup-link">Se Connecter </a></li></ng-template>
+  </ul>
+</div>
+
+
+<!--
+<ul class="header-links">
+  <li><a href="javascript:void(0);" (click)="goToContact()" class="contact-link">contactez-nous</a></li>
+  <li><a href="" class="order-tracking-link">Suivi commande</a></li>
+  <div *ngIf="isLoggedIn;then Avail else NotAvail"></div>
+  <ng-template #Avail> <li><a href="javascript:void(0);" (click)="sedeconnecter()" class="signup-link">Se déConnecter </a></li></ng-template>
+    <ng-template #NotAvail><li><a href="javascript:void(0);" (click)="goToSignIn()" class="signup-link">Se Connecter </a></li></ng-template>
+</ul>
+-->

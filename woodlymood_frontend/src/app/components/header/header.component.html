@@ -1,0 +1,44 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<div class="header-container">
+  <div (click)="goToLanding()" class="logo"></div>
+  <div class="main-menu-wrap">
+
+<nav class="main-menu"> 
+  <ul class="header-links">
+    <li><a href="#" class="cATALOGUE">Catalogue</a>
+      <ul class="sub-menu">
+        <li *ngFor="let category of categories; trackBy: trackByFn">
+          <a (click)="reloadPage(category._id)">{{ category.name }}</a></li>
+      </ul>
+    </li>
+
+    <li ><a [routerLink]="['/salon']" class="pROMOTION">Promotion</a></li>
+    <li *ngIf="this.user.email"><a [routerLink]="['/perso']" class="pERSONNALISER">Personnaliser</a></li>
+    <li><a [routerLink]="['/blog']" class="bLOG">Blog</a></li>
+  </ul>
+  </nav></div>
+  
+  <div class="icons">
+    
+    <div class="d-flex justify-content-center h-100">
+      <div class="searchbar">
+    
+        <input class="search_input" type="text" name="query" [(ngModel)]="query" placeholder="Search...">
+        <a (click)="onSearch()" class="search_icon"><i class="fas fa-search"></i></a>
+   
+      </div>
+    </div>
+    <div href="javascript:void(0);" (click)="goToSignIn()" class="icon-container utilisateur2"></div>
+    <div class="icon-container heart"></div>
+    <a [routerLink]="['/cart']"><div class="icon-container shoppingCart1"></div></a>
+  </div>
+</div>
+

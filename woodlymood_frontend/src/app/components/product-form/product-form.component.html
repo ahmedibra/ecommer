@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-g">
+  <a class="navbar-brand" href="#">Gestion des produits</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product" routerLinkActive="active">Nos produits</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/product/create" routerLinkActive="active">Ajouter un produit</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <div class="card card-body">
+
+      <form (submit)="edit ? updateProduct() : submitProduct()">
+
+        <div class="form-group">
+          <input type="text" name="name" [(ngModel)]="product.name" class="form-control" placeholder="Nom produit" autofocus>
+        </div><br>
+        <div class="form-group">
+          <input type="text" name="description" [(ngModel)]="product.description" class="form-control" placeholder="Description">
+        </div><br>
+        <div class="form-group">
+          <input type="number" name="price" [(ngModel)]="product.price" class="form-control" placeholder="Prix">
+        </div><br>
+        <div class="form-group">
+          <input type="number" name="price" [(ngModel)]="product.promotion" class="form-control" placeholder="Promotion">
+        </div><br>
+        <div class="form-group">
+          <input type="number" name="quantity" [(ngModel)]="product.quantity" class="form-control" placeholder="quantité">
+        </div><br>
+        <div class="form-group">
+          <input type="file" (change)="onFileSelected($event)" name="file" required>
+          
+
+        </div><br>
+        <div class="form-group">
+
+          <label for="category">Choisir Categorie:</label><br>
+        <select id="category" [(ngModel)]="product.category" name="category" required>
+          <option *ngFor="let category of categories" [value]="category._id">
+            {{ category.name }}
+          </option>
+        </select>
+        </div><br>
+        <button type="submit" class="btn btn-primary btn-block">
+          Enregistrer
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bf8c60;
+  color: #faf5f5;
+  padding: 10px 20px;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  font-size: 16px;
+}
+
+.header-links {
+  display: flex;
+  list-style: none;
+}
+
+.header-links li {
+  margin-left: 20px;
+}
+
+.header-links a {
+  color: #faf5f5;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.promo-message, .hours-available {
+  white-space: nowrap;
+}
+
+.divider-icon {
+  margin: 0 20px;
+  height: 25px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .divider-icon {
+    display: none;
+  }
+  .header-links {
+    justify-content: center;
+  }
+  .header-links li {
+    margin: 10px 0;
+  }
+}

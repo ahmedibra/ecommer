@@ -11,15 +11,15 @@ export class EmailService {
       host:"smtp.gmail.com",
       port:'587',
       auth: {
-        user: 'ibrahimiasma111@gmail.com', // Replace with your email
-        pass: 'norn lizz ckxd pmto'   // Replace with your email password    norn lizz ckxd pmto    laplusbelle2020
+        user: '', // Replace with your email
+        pass: ''   // Replace with your email password    
       }
     });
   }
 
   async sendMail(to: string, subject: string, html: string): Promise<void> {
     const mailOptions: nodemailer.SendMailOptions = {
-      from: 'ibrahimiasma111@gmail.com',
+      from: '',
       to,
       subject,
       html
